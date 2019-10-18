@@ -21,9 +21,9 @@ public class MessageSOAPImpl implements MessageSOAP {
 		}
 	}
 
-	public List<Message> getMessages(String user) throws ApplicationException {
+	public List<Message> getMessages(String user, String friend) throws ApplicationException {
 		try {
-			return MessageBusinessLogic.getMessages(user);
+			return MessageBusinessLogic.getMessages(user, friend);
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new ApplicationException(e.getMessage(), e);

@@ -15,8 +15,8 @@ public class MessageBusinessLogic {
 		return MessageDao.addMessage(mittente, destinatario, messaggio);
 	}
 
-	public static List<Message> getMessages(String user) throws ClassNotFoundException, SQLException, NamingException {
-		return MessageDao.getMessages(user);
+	public static List<Message> getMessages(String user, String friend) throws ClassNotFoundException, SQLException, NamingException {
+		return MessageDao.getMessages(user, friend);
 	}
 
 	public static boolean editMessage(int id, String testo) throws ClassNotFoundException, SQLException, NamingException {

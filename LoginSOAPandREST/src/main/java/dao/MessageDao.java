@@ -45,18 +45,22 @@ public class MessageDao {
 		return result;
 	}
 
-	public static List<Message> getMessages(String user) throws ClassNotFoundException, SQLException, NamingException {
+	public static List<Message> getMessages(String user, String friend) throws ClassNotFoundException, SQLException, NamingException {
 		List<Message> list = new ArrayList<Message>();
-		String sql = "SELECT * FROM messaggi WHERE mittente = ?";
+		String sql = "SELECT * FROM messaggi WHERE mittente = ? AND destinatario = ? "
+				+ "OR mittente = ? AND destinatario = ? ORDER BY data";
 		connection = getConnection();
 		statement = connection.prepareStatement(sql);
 		try {
 			statement.setString(1, user);
+			statement.setString(2, friend);
+			statement.setString(3, friend);
+			statement.setString(4, user);
 			ResultSet results = statement.executeQuery();
 			while (results.next()) {
 				Message messaggio = new Message();
 				messaggio.setId(results.getInt("id"));
-				messaggio.setMittente(user);
+				messaggio.setMittente(results.getString("mittente"));
 				messaggio.setDestinatario(results.getString("destinatario"));
 				messaggio.setTesto(results.getString("testo"));
 				messaggio.setData(results.getTimestamp("data"));

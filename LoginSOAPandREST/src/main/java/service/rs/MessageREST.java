@@ -29,11 +29,11 @@ public class MessageREST {
 	}
 
 	@GET
-	@Path("/{user}")
+	@Path("/{user}/{friend}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Message> getMessages(@PathParam("user") String user)
+	public List<Message> getMessages(@PathParam("user") String user, @PathParam("friend") String friend)
 			throws ClassNotFoundException, SQLException, NamingException {
-		return MessageBusinessLogic.getMessages(user);
+		return MessageBusinessLogic.getMessages(user, friend);
 	}
 
 	@PUT

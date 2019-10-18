@@ -18,7 +18,7 @@ public interface MessageSOAP {
 			throws ApplicationException;
 	
 	@WebMethod(operationName="visualizzaMessaggi")
-	public List<Message> getMessages(String user) throws ApplicationException;
+	public List<Message> getMessages(String user, String friend) throws ApplicationException;
 	
 	@WebMethod(operationName="modificaMessaggio")
 	public boolean editMessage(int id, String testo) throws ApplicationException;
