@@ -66,4 +66,24 @@
     <servlet-name>Logout</servlet-name>
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetChat</display-name>
+    <servlet-name>GetChat</servlet-name>
+    <servlet-class>servlets.GetChat</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetChat</servlet-name>
+    <url-pattern>/getChat</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteMessage</display-name>
+    <servlet-name>DeleteMessage</servlet-name>
+    <servlet-class>servlets.DeleteMessage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteMessage</servlet-name>
+    <url-pattern>/deleteMessage</url-pattern>
+  </servlet-mapping>
 </web-app>

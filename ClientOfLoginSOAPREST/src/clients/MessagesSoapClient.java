@@ -15,13 +15,13 @@ public class MessagesSoapClient {
 		return client;
 	}
 
-	public static boolean addMessage(String mittente, String destinatario, String messaggio, int id)
+	public static boolean addMessage(String mittente, String destinatario, String messaggio)
 			throws ApplicationException_Exception {
 		return getClient().addMessage(mittente, destinatario, messaggio);
 	}
 
-	public static List<Message> getMessages(String user) throws ApplicationException_Exception {
-		return getClient().getMessages(user);
+	public static List<Message> getMessages(String user, String friend) throws ApplicationException_Exception {
+		return getClient().getMessages(user, friend);
 	}
 
 	public static boolean editMessage(int id, String testo) throws ApplicationException_Exception {

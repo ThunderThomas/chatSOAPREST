@@ -35,6 +35,7 @@
 									<td>
 										<form method="Post" action="deleteMessage">
 											<input type="hidden" name="id" value="<%= m.getId() %>"/>
+											<input type="hidden" name="friend" value="<%= utente.getNome() %>"/>
 											<input type="submit" value="elimina"/>
 										</form>
 									</td>

@@ -91,6 +91,26 @@ public interface UserSOAPImpl {
 
     /**
      * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     * @throws ApplicationException_Exception
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "deleteUser", targetNamespace = "http://ws.service/", className = "service.ws.DeleteUser")
+    @ResponseWrapper(localName = "deleteUserResponse", targetNamespace = "http://ws.service/", className = "service.ws.DeleteUserResponse")
+    @Action(input = "http://ws.service/UserSOAPImpl/deleteUserRequest", output = "http://ws.service/UserSOAPImpl/deleteUserResponse", fault = {
+        @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/UserSOAPImpl/deleteUser/Fault/ApplicationException")
+    })
+    public boolean deleteUser(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0)
+        throws ApplicationException_Exception
+    ;
+
+    /**
+     * 
      * @param arg2
      * @param arg1
      * @param arg0
@@ -112,26 +132,6 @@ public interface UserSOAPImpl {
         String arg1,
         @WebParam(name = "arg2", targetNamespace = "")
         boolean arg2)
-        throws ApplicationException_Exception
-    ;
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns boolean
-     * @throws ApplicationException_Exception
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "deleteUser", targetNamespace = "http://ws.service/", className = "service.ws.DeleteUser")
-    @ResponseWrapper(localName = "deleteUserResponse", targetNamespace = "http://ws.service/", className = "service.ws.DeleteUserResponse")
-    @Action(input = "http://ws.service/UserSOAPImpl/deleteUserRequest", output = "http://ws.service/UserSOAPImpl/deleteUserResponse", fault = {
-        @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/UserSOAPImpl/deleteUser/Fault/ApplicationException")
-    })
-    public boolean deleteUser(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0)
         throws ApplicationException_Exception
     ;
 
