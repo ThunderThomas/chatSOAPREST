@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <resource-ref>
+    <description>DB Connection</description>
+    <res-ref-name>jdbc/Login</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <display-name>LoginSOAPandREST</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <listener>
+	<listener-class>
+		com.sun.xml.ws.transport.http.servlet.WSServletContextListener
+	</listener-class>
+  </listener>
+  
+  <servlet>
+    <description></description>
+    <display-name>GetServlet</display-name>
+    <servlet-name>GetServlet</servlet-name>
+    <servlet-class>servlets.GetServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetServlet</servlet-name>
+    <url-pattern>/getUser</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>PostServlet</display-name>
+    <servlet-name>PostServlet</servlet-name>
+    <servlet-class>servlets.PostServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PostServlet</servlet-name>
+    <url-pattern>/postUser</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>DeleteServlet</display-name>
+    <servlet-name>DeleteServlet</servlet-name>
+    <servlet-class>servlets.DeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteServlet</servlet-name>
+    <url-pattern>/deleteUser</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>GetAllServlet</display-name>
+    <servlet-name>GetAllServlet</servlet-name>
+    <servlet-class>servlets.GetAllServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetAllServlet</servlet-name>
+    <url-pattern>/getAll</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>PutServlet</display-name>
+    <servlet-name>PutServlet</servlet-name>
+    <servlet-class>servlets.PutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PutServlet</servlet-name>
+    <url-pattern>/putUser</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>DeleteConfirm</display-name>
+    <servlet-name>DeleteConfirm</servlet-name>
+    <servlet-class>servlets.DeleteConfirm</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteConfirm</servlet-name>
+    <url-pattern>/deleteConfirm</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>JAXWSServlet</servlet-name>
+	<servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+	<load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>JAXWSServlet</servlet-name>
+	<url-pattern>/jaxws</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Jersey REST Service</servlet-name>
+    <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+    <init-param> 
+	   <param-name>
+	      jersey.config.server.provider.packages
+	   </param-name> 
+	   <param-value>
+	      service.rs
+	    </param-value> 
+</init-param> 
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Jersey REST Service</servlet-name>
+  	<url-pattern>/jaxrs/*</url-pattern>
+  </servlet-mapping>
+</web-app>
