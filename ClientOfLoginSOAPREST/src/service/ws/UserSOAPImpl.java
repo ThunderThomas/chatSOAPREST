@@ -28,43 +28,6 @@ public interface UserSOAPImpl {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<service.ws.User>
-     * @throws ApplicationException_Exception
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getAll", targetNamespace = "http://ws.service/", className = "service.ws.GetAll")
-    @ResponseWrapper(localName = "getAllResponse", targetNamespace = "http://ws.service/", className = "service.ws.GetAllResponse")
-    @Action(input = "http://ws.service/UserSOAPImpl/getAllRequest", output = "http://ws.service/UserSOAPImpl/getAllResponse", fault = {
-        @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/UserSOAPImpl/getAll/Fault/ApplicationException")
-    })
-    public List<User> getAll()
-        throws ApplicationException_Exception
-    ;
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns service.ws.User
-     * @throws ApplicationException_Exception
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getUser", targetNamespace = "http://ws.service/", className = "service.ws.GetUser")
-    @ResponseWrapper(localName = "getUserResponse", targetNamespace = "http://ws.service/", className = "service.ws.GetUserResponse")
-    @Action(input = "http://ws.service/UserSOAPImpl/getUserRequest", output = "http://ws.service/UserSOAPImpl/getUserResponse", fault = {
-        @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/UserSOAPImpl/getUser/Fault/ApplicationException")
-    })
-    public User getUser(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0)
-        throws ApplicationException_Exception
-    ;
-
-    /**
-     * 
      * @param arg2
      * @param arg1
      * @param arg0
@@ -80,6 +43,32 @@ public interface UserSOAPImpl {
         @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/UserSOAPImpl/addUser/Fault/ApplicationException")
     })
     public boolean addUser(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        boolean arg2)
+        throws ApplicationException_Exception
+    ;
+
+    /**
+     * 
+     * @param arg2
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns boolean
+     * @throws ApplicationException_Exception
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "editUser", targetNamespace = "http://ws.service/", className = "service.ws.EditUser")
+    @ResponseWrapper(localName = "editUserResponse", targetNamespace = "http://ws.service/", className = "service.ws.EditUserResponse")
+    @Action(input = "http://ws.service/UserSOAPImpl/editUserRequest", output = "http://ws.service/UserSOAPImpl/editUserResponse", fault = {
+        @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/UserSOAPImpl/editUser/Fault/ApplicationException")
+    })
+    public boolean editUser(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0,
         @WebParam(name = "arg1", targetNamespace = "")
@@ -111,27 +100,38 @@ public interface UserSOAPImpl {
 
     /**
      * 
-     * @param arg2
-     * @param arg1
      * @param arg0
      * @return
-     *     returns boolean
+     *     returns service.ws.User
      * @throws ApplicationException_Exception
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "editUser", targetNamespace = "http://ws.service/", className = "service.ws.EditUser")
-    @ResponseWrapper(localName = "editUserResponse", targetNamespace = "http://ws.service/", className = "service.ws.EditUserResponse")
-    @Action(input = "http://ws.service/UserSOAPImpl/editUserRequest", output = "http://ws.service/UserSOAPImpl/editUserResponse", fault = {
-        @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/UserSOAPImpl/editUser/Fault/ApplicationException")
+    @RequestWrapper(localName = "getUser", targetNamespace = "http://ws.service/", className = "service.ws.GetUser")
+    @ResponseWrapper(localName = "getUserResponse", targetNamespace = "http://ws.service/", className = "service.ws.GetUserResponse")
+    @Action(input = "http://ws.service/UserSOAPImpl/getUserRequest", output = "http://ws.service/UserSOAPImpl/getUserResponse", fault = {
+        @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/UserSOAPImpl/getUser/Fault/ApplicationException")
     })
-    public boolean editUser(
+    public User getUser(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1,
-        @WebParam(name = "arg2", targetNamespace = "")
-        boolean arg2)
+        String arg0)
+        throws ApplicationException_Exception
+    ;
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<service.ws.User>
+     * @throws ApplicationException_Exception
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getAll", targetNamespace = "http://ws.service/", className = "service.ws.GetAll")
+    @ResponseWrapper(localName = "getAllResponse", targetNamespace = "http://ws.service/", className = "service.ws.GetAllResponse")
+    @Action(input = "http://ws.service/UserSOAPImpl/getAllRequest", output = "http://ws.service/UserSOAPImpl/getAllResponse", fault = {
+        @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/UserSOAPImpl/getAll/Fault/ApplicationException")
+    })
+    public List<User> getAll()
         throws ApplicationException_Exception
     ;
 

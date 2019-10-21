@@ -26,7 +26,6 @@ public class DeleteSOAP extends HttpServlet {
 					try {
 						UsersSoapClient.deleteUser(nome);
 					} catch (ApplicationException_Exception e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}

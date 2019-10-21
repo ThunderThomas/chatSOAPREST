@@ -3,7 +3,9 @@ package service.ws;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
@@ -16,10 +18,11 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="data" type="{http://ws.service/}timestamp" minOccurs="0"/>
+ *         &lt;element name="data" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="destinatario" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="mittente" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="ora" type="{http://ws.service/}time" minOccurs="0"/>
  *         &lt;element name="testo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -35,14 +38,17 @@ import javax.xml.bind.annotation.XmlType;
     "destinatario",
     "id",
     "mittente",
+    "ora",
     "testo"
 })
 public class Message {
 
-    protected Timestamp data;
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar data;
     protected String destinatario;
     protected int id;
     protected String mittente;
+    protected Time ora;
     protected String testo;
 
     /**
@@ -50,10 +56,10 @@ public class Message {
      * 
      * @return
      *     possible object is
-     *     {@link Timestamp }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public Timestamp getData() {
+    public XMLGregorianCalendar getData() {
         return data;
     }
 
@@ -62,10 +68,10 @@ public class Message {
      * 
      * @param value
      *     allowed object is
-     *     {@link Timestamp }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setData(Timestamp value) {
+    public void setData(XMLGregorianCalendar value) {
         this.data = value;
     }
 
@@ -131,6 +137,30 @@ public class Message {
      */
     public void setMittente(String value) {
         this.mittente = value;
+    }
+
+    /**
+     * Recupera il valore della proprietà ora.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Time }
+     *     
+     */
+    public Time getOra() {
+        return ora;
+    }
+
+    /**
+     * Imposta il valore della proprietà ora.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Time }
+     *     
+     */
+    public void setOra(Time value) {
+        this.ora = value;
     }
 
     /**

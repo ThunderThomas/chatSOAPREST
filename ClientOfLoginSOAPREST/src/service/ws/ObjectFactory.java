@@ -114,19 +114,19 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Time }
+     * 
+     */
+    public Time createTime() {
+        return new Time();
+    }
+
+    /**
      * Create an instance of {@link Message }
      * 
      */
     public Message createMessage() {
         return new Message();
-    }
-
-    /**
-     * Create an instance of {@link Timestamp }
-     * 
-     */
-    public Timestamp createTimestamp() {
-        return new Timestamp();
     }
 
     /**

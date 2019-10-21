@@ -37,8 +37,6 @@
     <url-pattern>/deleteConfirm</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description></description>
-    <display-name>DeleteSOAP</display-name>
     <servlet-name>DeleteSOAP</servlet-name>
     <servlet-class>servlets.DeleteSOAP</servlet-class>
   </servlet>
@@ -47,8 +45,6 @@
     <url-pattern>/deleteUser</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description></description>
-    <display-name>CheckLogin</display-name>
     <servlet-name>CheckLogin</servlet-name>
     <servlet-class>servlets.CheckLogin</servlet-class>
   </servlet>
@@ -57,8 +53,6 @@
     <url-pattern>/checkLogin</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description></description>
-    <display-name>Logout</display-name>
     <servlet-name>Logout</servlet-name>
     <servlet-class>servlets.Logout</servlet-class>
   </servlet>
@@ -67,23 +61,11 @@
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description></description>
-    <display-name>GetChat</display-name>
     <servlet-name>GetChat</servlet-name>
     <servlet-class>servlets.GetChat</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>GetChat</servlet-name>
     <url-pattern>/getChat</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>DeleteMessage</display-name>
-    <servlet-name>DeleteMessage</servlet-name>
-    <servlet-class>servlets.DeleteMessage</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>DeleteMessage</servlet-name>
-    <url-pattern>/deleteMessage</url-pattern>
   </servlet-mapping>
 </web-app>
