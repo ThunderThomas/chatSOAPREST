@@ -17,6 +17,13 @@ public interface MessageSOAP {
 	public boolean addMessage(String mittente, String destinatario, String messaggio)
 			throws ApplicationException;
 	
+	@WebMethod(operationName="rispondiMessaggio")
+	public boolean replyMessage(String mittente, String destinatario, String messaggio, int id)
+			throws ApplicationException;
+	
+	@WebMethod(operationName="recuperaMessaggio")
+	public Message getMessage(int id) throws ApplicationException;
+	
 	@WebMethod(operationName="visualizzaMessaggi")
 	public List<Message> getMessages(String user, String friend) throws ApplicationException;
 	

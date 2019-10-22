@@ -4,9 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.naming.Context;
@@ -62,7 +60,30 @@ public class MessageDao {
 		}
 		return result;
 	}
-
+	
+	public static Message getMessage(int id) throws SQLException, ClassNotFoundException, NamingException {
+		Message messaggio = new Message();
+		String sql = "SELECT * FROM messaggi where id = ?";
+		connection = getConnection();
+		statement = connection.prepareStatement(sql);
+		try {
+			statement.setInt(1, id);
+			ResultSet results = statement.executeQuery();
+			results.next();
+			messaggio.setId(results.getInt("id"));
+			messaggio.setMittente(results.getString("mittente"));
+			messaggio.setDestinatario(results.getString("destinatario"));
+			messaggio.setTesto(results.getString("testo"));
+			messaggio.setData(results.getTimestamp("data"));
+			messaggio.setRisposta(results.getInt("risposta"));
+			messaggio.setEliminato(results.getBoolean("eliminato"));
+		} finally {
+			statement.close();
+			connection.close();
+		}
+		return messaggio;
+	}
+	
 	public static List<Message> getMessages(String user, String friend) throws ClassNotFoundException, SQLException, NamingException {
 		List<Message> list = new ArrayList<Message>();
 		String sql = "SELECT * FROM messaggi WHERE mittente = ? AND destinatario = ? "
@@ -82,6 +103,8 @@ public class MessageDao {
 				messaggio.setDestinatario(results.getString("destinatario"));
 				messaggio.setTesto(results.getString("testo"));
 				messaggio.setData(results.getTimestamp("data"));
+				messaggio.setRisposta(results.getInt("risposta"));
+				messaggio.setEliminato(results.getBoolean("eliminato"));
 				list.add(messaggio);
 			}
 		} finally {
@@ -109,7 +132,7 @@ public class MessageDao {
 	}
 
 	public static boolean deleteMessage(int id) throws ClassNotFoundException, SQLException, NamingException {
-		String sql = "DELETE FROM messaggi where id = ?";
+		String sql = "UPDATE messaggi SET eliminato = 1 where id = ?";
 		connection = getConnection();
 		statement = connection.prepareStatement(sql);
 		boolean result = false;

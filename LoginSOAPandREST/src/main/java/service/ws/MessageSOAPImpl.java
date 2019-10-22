@@ -1,8 +1,10 @@
 package service.ws;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.jws.WebService;
+import javax.naming.NamingException;
 
 import bl.MessageBusinessLogic;
 import exceptions.ApplicationException;
@@ -15,6 +17,25 @@ public class MessageSOAPImpl implements MessageSOAP {
 			throws ApplicationException {
 		try {
 			return MessageBusinessLogic.addMessage(mittente, destinatario, messaggio);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new ApplicationException(e.getMessage(), e);
+		}
+	}
+	
+	public boolean replyMessage(String mittente, String destinatario, String messaggio, int id)
+			throws ApplicationException {
+		try {
+			return MessageBusinessLogic.addMessage(mittente, destinatario, messaggio, id);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new ApplicationException(e.getMessage(), e);
+		}
+	}
+	
+	public Message getMessage(int id) throws ApplicationException {
+		try {
+			return MessageBusinessLogic.getMessage(id);
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new ApplicationException(e.getMessage(), e);

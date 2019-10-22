@@ -14,6 +14,15 @@ public class MessageBusinessLogic {
 			throws ClassNotFoundException, SQLException, NamingException {
 		return MessageDao.addMessage(mittente, destinatario, messaggio);
 	}
+	
+	public static boolean addMessage(String mittente, String destinatario, String messaggio, int id)
+			throws ClassNotFoundException, SQLException, NamingException {
+		return MessageDao.addMessage(mittente, destinatario, messaggio, id);
+	}
+	
+	public static Message getMessage(int id) throws ClassNotFoundException, SQLException, NamingException {
+		return MessageDao.getMessage(id);
+	}
 
 	public static List<Message> getMessages(String user, String friend) throws ClassNotFoundException, SQLException, NamingException {
 		return MessageDao.getMessages(user, friend);

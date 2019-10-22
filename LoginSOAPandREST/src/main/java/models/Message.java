@@ -9,6 +9,24 @@ public class Message {
 	private String destinatario;
 	private String testo;
 	private Date data;
+	private int risposta;
+	private boolean eliminato;
+
+	public boolean isEliminato() {
+		return eliminato;
+	}
+
+	public void setEliminato(boolean eliminato) {
+		this.eliminato = eliminato;
+	}
+
+	public int getRisposta() {
+		return risposta;
+	}
+
+	public void setRisposta(int risposta) {
+		this.risposta = risposta;
+	}
 
 	public int getId() {
 		return id;
