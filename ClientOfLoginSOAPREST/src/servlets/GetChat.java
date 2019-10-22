@@ -1,6 +1,7 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import clients.MessagesSoapClient;
 import service.ws.ApplicationException_Exception;
+import service.ws.Message;
 
 public class GetChat extends HttpServlet {
 
@@ -20,7 +22,8 @@ public class GetChat extends HttpServlet {
 			
 			try {
 				request.setAttribute("friend", friend);
-				request.setAttribute("messageList", MessagesSoapClient.getMessages((String) request.getSession().getAttribute("user"), friend));
+				List<Message> lista = MessagesSoapClient.getMessages((String) request.getSession().getAttribute("user"), friend);
+				request.setAttribute("messageList", lista);
 				getServletContext().getRequestDispatcher("/chat.jsp").forward(request, response);
 			} catch (ApplicationException_Exception e) {
 				e.printStackTrace();

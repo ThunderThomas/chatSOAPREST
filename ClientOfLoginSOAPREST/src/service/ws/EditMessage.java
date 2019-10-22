@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per editMessage complex type.
+ * <p>Java class for editMessage complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="editMessage">
@@ -37,7 +37,7 @@ public class EditMessage {
     protected String arg1;
 
     /**
-     * Recupera il valore della proprietà arg0.
+     * Gets the value of the arg0 property.
      * 
      */
     public int getArg0() {
@@ -45,7 +45,7 @@ public class EditMessage {
     }
 
     /**
-     * Imposta il valore della proprietà arg0.
+     * Sets the value of the arg0 property.
      * 
      */
     public void setArg0(int value) {
@@ -53,7 +53,7 @@ public class EditMessage {
     }
 
     /**
-     * Recupera il valore della proprietà arg1.
+     * Gets the value of the arg1 property.
      * 
      * @return
      *     possible object is
@@ -65,7 +65,7 @@ public class EditMessage {
     }
 
     /**
-     * Imposta il valore della proprietà arg1.
+     * Sets the value of the arg1 property.
      * 
      * @param value
      *     allowed object is

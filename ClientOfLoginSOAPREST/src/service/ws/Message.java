@@ -9,9 +9,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Classe Java per message complex type.
+ * <p>Java class for message complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="message">
@@ -22,7 +22,6 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="destinatario" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="mittente" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="ora" type="{http://ws.service/}time" minOccurs="0"/>
  *         &lt;element name="testo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -38,7 +37,6 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "destinatario",
     "id",
     "mittente",
-    "ora",
     "testo"
 })
 public class Message {
@@ -48,11 +46,10 @@ public class Message {
     protected String destinatario;
     protected int id;
     protected String mittente;
-    protected Time ora;
     protected String testo;
 
     /**
-     * Recupera il valore della proprietà data.
+     * Gets the value of the data property.
      * 
      * @return
      *     possible object is
@@ -64,7 +61,7 @@ public class Message {
     }
 
     /**
-     * Imposta il valore della proprietà data.
+     * Sets the value of the data property.
      * 
      * @param value
      *     allowed object is
@@ -76,7 +73,7 @@ public class Message {
     }
 
     /**
-     * Recupera il valore della proprietà destinatario.
+     * Gets the value of the destinatario property.
      * 
      * @return
      *     possible object is
@@ -88,7 +85,7 @@ public class Message {
     }
 
     /**
-     * Imposta il valore della proprietà destinatario.
+     * Sets the value of the destinatario property.
      * 
      * @param value
      *     allowed object is
@@ -100,7 +97,7 @@ public class Message {
     }
 
     /**
-     * Recupera il valore della proprietà id.
+     * Gets the value of the id property.
      * 
      */
     public int getId() {
@@ -108,7 +105,7 @@ public class Message {
     }
 
     /**
-     * Imposta il valore della proprietà id.
+     * Sets the value of the id property.
      * 
      */
     public void setId(int value) {
@@ -116,7 +113,7 @@ public class Message {
     }
 
     /**
-     * Recupera il valore della proprietà mittente.
+     * Gets the value of the mittente property.
      * 
      * @return
      *     possible object is
@@ -128,7 +125,7 @@ public class Message {
     }
 
     /**
-     * Imposta il valore della proprietà mittente.
+     * Sets the value of the mittente property.
      * 
      * @param value
      *     allowed object is
@@ -140,31 +137,7 @@ public class Message {
     }
 
     /**
-     * Recupera il valore della proprietà ora.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Time }
-     *     
-     */
-    public Time getOra() {
-        return ora;
-    }
-
-    /**
-     * Imposta il valore della proprietà ora.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Time }
-     *     
-     */
-    public void setOra(Time value) {
-        this.ora = value;
-    }
-
-    /**
-     * Recupera il valore della proprietà testo.
+     * Gets the value of the testo property.
      * 
      * @return
      *     possible object is
@@ -176,7 +149,7 @@ public class Message {
     }
 
     /**
-     * Imposta il valore della proprietà testo.
+     * Sets the value of the testo property.
      * 
      * @param value
      *     allowed object is

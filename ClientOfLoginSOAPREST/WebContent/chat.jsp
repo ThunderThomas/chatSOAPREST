@@ -2,8 +2,10 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <%@ page import = "java.util.*" %>
+<%@ page import = "java.text.SimpleDateFormat" %>
 <%@ page import = "service.ws.Message" %>
 <%@ page import = "service.ws.User" %>
+<% SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy HH.mm.ss"); %>
 <% String friend = (String) request.getAttribute("friend"); %>
 <% List<User> userList = (List<User>) session.getAttribute("userList"); %>
 <% List<Message> messageList = (List<Message>) request.getAttribute("messageList"); %>
@@ -33,19 +35,19 @@
 			<td>
 				<% if (messageList != null && !messageList.isEmpty()) {%>
 					<% for (Message m: messageList) {%>
-						<form method="Post" action="deleteMessage">
-							<p>[<%= m.getData()%>] <%= m.getMittente() %>: <%= m.getTesto() %> 
-							<% if (m.getMittente().equals(session.getAttribute("user"))) {%>
+						<form method="Post" action="<%if (m.getMittente().equals(session.getAttribute("user"))) {%>deleteMessage<%} else {%>replyToMessage<%}%>">
+							<p>[<%= sdf.format(m.getData().toGregorianCalendar().getTime())%>] <%= m.getMittente() %>: <%= m.getTesto() %> 
+									<input type="hidden" name="friend" value="<%= friend %>"/>
 									<input type="hidden" name="id" value="<%= m.getId() %>"/>
-									<input type="submit" value="elimina"/>	
-							<%} %></p>
+									<input type="submit" value="<%if (m.getMittente().equals(session.getAttribute("user"))) {%>elimina<%} else {%>rispondi<%}%>"/>	
+							</p>
 						</form>
 					<%} %>
 				<%} else { %>
 					<p>Non sono presenti messaggi</p>
 				<%} %>
 				<% if (friend != null){ %>
-					<form action="postMessage">
+					<form method="Post" action="postMessage">
 						<input type="hidden" name="destinatario" value="<%= friend %>"/>
 						<input type="text" name="testo"/>
 						<input type="submit" value="Invia"/>

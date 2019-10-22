@@ -68,4 +68,20 @@
     <servlet-name>GetChat</servlet-name>
     <url-pattern>/getChat</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>DeleteMessage</servlet-name>
+    <servlet-class>servlets.DeleteMessage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteMessage</servlet-name>
+    <url-pattern>/deleteMessage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>PostMessage</servlet-name>
+    <servlet-class>servlets.PostMessage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PostMessage</servlet-name>
+    <url-pattern>/postMessage</url-pattern>
+  </servlet-mapping>
 </web-app>

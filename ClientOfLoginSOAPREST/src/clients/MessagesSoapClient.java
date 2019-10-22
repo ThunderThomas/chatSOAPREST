@@ -15,7 +15,7 @@ public class MessagesSoapClient {
 		return client;
 	}
 
-	public static boolean addMessage(String mittente, String destinatario, String messaggio, int id)
+	public static boolean addMessage(String mittente, String destinatario, String messaggio)
 			throws ApplicationException_Exception {
 		return getClient().addMessage(mittente, destinatario, messaggio);
 	}

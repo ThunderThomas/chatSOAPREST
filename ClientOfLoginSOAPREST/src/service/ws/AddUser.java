@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per addUser complex type.
+ * <p>Java class for addUser complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="addUser">
@@ -40,7 +40,7 @@ public class AddUser {
     protected boolean arg2;
 
     /**
-     * Recupera il valore della proprietà arg0.
+     * Gets the value of the arg0 property.
      * 
      * @return
      *     possible object is
@@ -52,7 +52,7 @@ public class AddUser {
     }
 
     /**
-     * Imposta il valore della proprietà arg0.
+     * Sets the value of the arg0 property.
      * 
      * @param value
      *     allowed object is
@@ -64,7 +64,7 @@ public class AddUser {
     }
 
     /**
-     * Recupera il valore della proprietà arg1.
+     * Gets the value of the arg1 property.
      * 
      * @return
      *     possible object is
@@ -76,7 +76,7 @@ public class AddUser {
     }
 
     /**
-     * Imposta il valore della proprietà arg1.
+     * Sets the value of the arg1 property.
      * 
      * @param value
      *     allowed object is
@@ -88,7 +88,7 @@ public class AddUser {
     }
 
     /**
-     * Recupera il valore della proprietà arg2.
+     * Gets the value of the arg2 property.
      * 
      */
     public boolean isArg2() {
@@ -96,7 +96,7 @@ public class AddUser {
     }
 
     /**
-     * Imposta il valore della proprietà arg2.
+     * Sets the value of the arg2 property.
      * 
      */
     public void setArg2(boolean value) {

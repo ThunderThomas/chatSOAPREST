@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per user complex type.
+ * <p>Java class for user complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="user">
@@ -40,7 +40,7 @@ public class User {
     protected String password;
 
     /**
-     * Recupera il valore della proprietà admin.
+     * Gets the value of the admin property.
      * 
      */
     public boolean isAdmin() {
@@ -48,7 +48,7 @@ public class User {
     }
 
     /**
-     * Imposta il valore della proprietà admin.
+     * Sets the value of the admin property.
      * 
      */
     public void setAdmin(boolean value) {
@@ -56,7 +56,7 @@ public class User {
     }
 
     /**
-     * Recupera il valore della proprietà nome.
+     * Gets the value of the nome property.
      * 
      * @return
      *     possible object is
@@ -68,7 +68,7 @@ public class User {
     }
 
     /**
-     * Imposta il valore della proprietà nome.
+     * Sets the value of the nome property.
      * 
      * @param value
      *     allowed object is
@@ -80,7 +80,7 @@ public class User {
     }
 
     /**
-     * Recupera il valore della proprietà password.
+     * Gets the value of the password property.
      * 
      * @return
      *     possible object is
@@ -92,7 +92,7 @@ public class User {
     }
 
     /**
-     * Imposta il valore della proprietà password.
+     * Sets the value of the password property.
      * 
      * @param value
      *     allowed object is

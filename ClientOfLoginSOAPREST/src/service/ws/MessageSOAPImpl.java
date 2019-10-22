@@ -28,52 +28,6 @@ public interface MessageSOAPImpl {
 
     /**
      * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns boolean
-     * @throws ApplicationException_Exception
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "editMessage", targetNamespace = "http://ws.service/", className = "service.ws.EditMessage")
-    @ResponseWrapper(localName = "editMessageResponse", targetNamespace = "http://ws.service/", className = "service.ws.EditMessageResponse")
-    @Action(input = "http://ws.service/MessageSOAPImpl/editMessageRequest", output = "http://ws.service/MessageSOAPImpl/editMessageResponse", fault = {
-        @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/MessageSOAPImpl/editMessage/Fault/ApplicationException")
-    })
-    public boolean editMessage(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1)
-        throws ApplicationException_Exception
-    ;
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns java.util.List<service.ws.Message>
-     * @throws ApplicationException_Exception
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getMessages", targetNamespace = "http://ws.service/", className = "service.ws.GetMessages")
-    @ResponseWrapper(localName = "getMessagesResponse", targetNamespace = "http://ws.service/", className = "service.ws.GetMessagesResponse")
-    @Action(input = "http://ws.service/MessageSOAPImpl/getMessagesRequest", output = "http://ws.service/MessageSOAPImpl/getMessagesResponse", fault = {
-        @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/MessageSOAPImpl/getMessages/Fault/ApplicationException")
-    })
-    public List<Message> getMessages(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1)
-        throws ApplicationException_Exception
-    ;
-
-    /**
-     * 
      * @param arg0
      * @return
      *     returns boolean
@@ -115,6 +69,52 @@ public interface MessageSOAPImpl {
         String arg1,
         @WebParam(name = "arg2", targetNamespace = "")
         String arg2)
+        throws ApplicationException_Exception
+    ;
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns java.util.List<service.ws.Message>
+     * @throws ApplicationException_Exception
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getMessages", targetNamespace = "http://ws.service/", className = "service.ws.GetMessages")
+    @ResponseWrapper(localName = "getMessagesResponse", targetNamespace = "http://ws.service/", className = "service.ws.GetMessagesResponse")
+    @Action(input = "http://ws.service/MessageSOAPImpl/getMessagesRequest", output = "http://ws.service/MessageSOAPImpl/getMessagesResponse", fault = {
+        @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/MessageSOAPImpl/getMessages/Fault/ApplicationException")
+    })
+    public List<Message> getMessages(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1)
+        throws ApplicationException_Exception
+    ;
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns boolean
+     * @throws ApplicationException_Exception
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "editMessage", targetNamespace = "http://ws.service/", className = "service.ws.EditMessage")
+    @ResponseWrapper(localName = "editMessageResponse", targetNamespace = "http://ws.service/", className = "service.ws.EditMessageResponse")
+    @Action(input = "http://ws.service/MessageSOAPImpl/editMessageRequest", output = "http://ws.service/MessageSOAPImpl/editMessageResponse", fault = {
+        @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/MessageSOAPImpl/editMessage/Fault/ApplicationException")
+    })
+    public boolean editMessage(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1)
         throws ApplicationException_Exception
     ;
 

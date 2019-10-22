@@ -28,6 +28,23 @@ public interface UserSOAPImpl {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<service.ws.User>
+     * @throws ApplicationException_Exception
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getAll", targetNamespace = "http://ws.service/", className = "service.ws.GetAll")
+    @ResponseWrapper(localName = "getAllResponse", targetNamespace = "http://ws.service/", className = "service.ws.GetAllResponse")
+    @Action(input = "http://ws.service/UserSOAPImpl/getAllRequest", output = "http://ws.service/UserSOAPImpl/getAllResponse", fault = {
+        @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/UserSOAPImpl/getAll/Fault/ApplicationException")
+    })
+    public List<User> getAll()
+        throws ApplicationException_Exception
+    ;
+
+    /**
+     * 
      * @param arg2
      * @param arg1
      * @param arg0
@@ -115,23 +132,6 @@ public interface UserSOAPImpl {
     public User getUser(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0)
-        throws ApplicationException_Exception
-    ;
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<service.ws.User>
-     * @throws ApplicationException_Exception
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getAll", targetNamespace = "http://ws.service/", className = "service.ws.GetAll")
-    @ResponseWrapper(localName = "getAllResponse", targetNamespace = "http://ws.service/", className = "service.ws.GetAllResponse")
-    @Action(input = "http://ws.service/UserSOAPImpl/getAllRequest", output = "http://ws.service/UserSOAPImpl/getAllResponse", fault = {
-        @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/UserSOAPImpl/getAll/Fault/ApplicationException")
-    })
-    public List<User> getAll()
         throws ApplicationException_Exception
     ;
 
