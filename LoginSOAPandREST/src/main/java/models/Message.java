@@ -1,6 +1,6 @@
 package models;
 
-import java.sql.Timestamp;
+import java.util.Date;
 
 public class Message {
 
@@ -8,7 +8,7 @@ public class Message {
 	private String mittente;
 	private String destinatario;
 	private String testo;
-	private Timestamp data;
+	private Date data;
 
 	public int getId() {
 		return id;
@@ -42,11 +42,11 @@ public class Message {
 		this.testo = testo;
 	}
 
-	public Timestamp getData() {
+	public Date getData() {
 		return data;
 	}
 
-	public void setData(Timestamp data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
 

@@ -28,7 +28,7 @@ public class MessageDao {
 
 	public static boolean addMessage(String mittente, String destinatario, String messaggio)
 			throws ClassNotFoundException, SQLException, NamingException {
-		String sql = "INSERT INTO messaggi (mittente, destinatario, testo, data) values (?, ?, ?, ?)";
+		String sql = "INSERT INTO messaggi (mittente, destinatario, testo) values (?, ?, ?)";
 		boolean result;
 		connection = getConnection();
 		statement = connection.prepareStatement(sql);
@@ -36,7 +36,25 @@ public class MessageDao {
 			statement.setString(1, mittente);
 			statement.setString(2, destinatario);
 			statement.setString(3, messaggio);
-			statement.setTimestamp(4, new Timestamp(new Date().getTime()));
+			result = statement.executeUpdate() != 0;
+		} finally {
+			statement.close();
+			connection.close();
+		}
+		return result;
+	}
+	
+	public static boolean addMessage(String mittente, String destinatario, String messaggio, int id)
+			throws ClassNotFoundException, SQLException, NamingException {
+		String sql = "INSERT INTO messaggi(mittente, destinatario, testo, risposta) values (?, ?, ?, ?)";
+		boolean result;
+		connection = getConnection();
+		statement = connection.prepareStatement(sql);
+		try {
+			statement.setString(1, mittente);
+			statement.setString(2, destinatario);
+			statement.setString(3, messaggio);
+			statement.setInt(4, id);
 			result = statement.executeUpdate() != 0;
 		} finally {
 			statement.close();
