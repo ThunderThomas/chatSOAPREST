@@ -84,4 +84,14 @@
     <servlet-name>PostMessage</servlet-name>
     <url-pattern>/postMessage</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReplyMessage</display-name>
+    <servlet-name>ReplyMessage</servlet-name>
+    <servlet-class>servlets.ReplyMessage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReplyMessage</servlet-name>
+    <url-pattern>/replyToMessage</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -25,14 +25,18 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _EditMessage_QNAME = new QName("http://ws.service/", "editMessage");
+    private final static QName _ReplyMessage_QNAME = new QName("http://ws.service/", "replyMessage");
     private final static QName _ApplicationException_QNAME = new QName("http://ws.service/", "ApplicationException");
+    private final static QName _GetMessagesResponse_QNAME = new QName("http://ws.service/", "getMessagesResponse");
+    private final static QName _ReplyMessageResponse_QNAME = new QName("http://ws.service/", "replyMessageResponse");
+    private final static QName _EditMessageResponse_QNAME = new QName("http://ws.service/", "editMessageResponse");
     private final static QName _DeleteMessageResponse_QNAME = new QName("http://ws.service/", "deleteMessageResponse");
     private final static QName _AddMessage_QNAME = new QName("http://ws.service/", "addMessage");
+    private final static QName _GetMessageResponse_QNAME = new QName("http://ws.service/", "getMessageResponse");
     private final static QName _AddMessageResponse_QNAME = new QName("http://ws.service/", "addMessageResponse");
     private final static QName _GetMessages_QNAME = new QName("http://ws.service/", "getMessages");
-    private final static QName _GetMessagesResponse_QNAME = new QName("http://ws.service/", "getMessagesResponse");
     private final static QName _DeleteMessage_QNAME = new QName("http://ws.service/", "deleteMessage");
-    private final static QName _EditMessageResponse_QNAME = new QName("http://ws.service/", "editMessageResponse");
+    private final static QName _GetMessage_QNAME = new QName("http://ws.service/", "getMessage");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: service.ws
@@ -50,27 +54,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ApplicationException }
+     * Create an instance of {@link GetMessage }
      * 
      */
-    public ApplicationException createApplicationException() {
-        return new ApplicationException();
-    }
-
-    /**
-     * Create an instance of {@link EditMessage }
-     * 
-     */
-    public EditMessage createEditMessage() {
-        return new EditMessage();
-    }
-
-    /**
-     * Create an instance of {@link EditMessageResponse }
-     * 
-     */
-    public EditMessageResponse createEditMessageResponse() {
-        return new EditMessageResponse();
+    public GetMessage createGetMessage() {
+        return new GetMessage();
     }
 
     /**
@@ -98,19 +86,67 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetMessagesResponse }
-     * 
-     */
-    public GetMessagesResponse createGetMessagesResponse() {
-        return new GetMessagesResponse();
-    }
-
-    /**
      * Create an instance of {@link AddMessage }
      * 
      */
     public AddMessage createAddMessage() {
         return new AddMessage();
+    }
+
+    /**
+     * Create an instance of {@link GetMessageResponse }
+     * 
+     */
+    public GetMessageResponse createGetMessageResponse() {
+        return new GetMessageResponse();
+    }
+
+    /**
+     * Create an instance of {@link ApplicationException }
+     * 
+     */
+    public ApplicationException createApplicationException() {
+        return new ApplicationException();
+    }
+
+    /**
+     * Create an instance of {@link EditMessage }
+     * 
+     */
+    public EditMessage createEditMessage() {
+        return new EditMessage();
+    }
+
+    /**
+     * Create an instance of {@link ReplyMessage }
+     * 
+     */
+    public ReplyMessage createReplyMessage() {
+        return new ReplyMessage();
+    }
+
+    /**
+     * Create an instance of {@link ReplyMessageResponse }
+     * 
+     */
+    public ReplyMessageResponse createReplyMessageResponse() {
+        return new ReplyMessageResponse();
+    }
+
+    /**
+     * Create an instance of {@link EditMessageResponse }
+     * 
+     */
+    public EditMessageResponse createEditMessageResponse() {
+        return new EditMessageResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetMessagesResponse }
+     * 
+     */
+    public GetMessagesResponse createGetMessagesResponse() {
+        return new GetMessagesResponse();
     }
 
     /**
@@ -131,12 +167,48 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ReplyMessage }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.service/", name = "replyMessage")
+    public JAXBElement<ReplyMessage> createReplyMessage(ReplyMessage value) {
+        return new JAXBElement<ReplyMessage>(_ReplyMessage_QNAME, ReplyMessage.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ApplicationException }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://ws.service/", name = "ApplicationException")
     public JAXBElement<ApplicationException> createApplicationException(ApplicationException value) {
         return new JAXBElement<ApplicationException>(_ApplicationException_QNAME, ApplicationException.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetMessagesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.service/", name = "getMessagesResponse")
+    public JAXBElement<GetMessagesResponse> createGetMessagesResponse(GetMessagesResponse value) {
+        return new JAXBElement<GetMessagesResponse>(_GetMessagesResponse_QNAME, GetMessagesResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ReplyMessageResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.service/", name = "replyMessageResponse")
+    public JAXBElement<ReplyMessageResponse> createReplyMessageResponse(ReplyMessageResponse value) {
+        return new JAXBElement<ReplyMessageResponse>(_ReplyMessageResponse_QNAME, ReplyMessageResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link EditMessageResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.service/", name = "editMessageResponse")
+    public JAXBElement<EditMessageResponse> createEditMessageResponse(EditMessageResponse value) {
+        return new JAXBElement<EditMessageResponse>(_EditMessageResponse_QNAME, EditMessageResponse.class, null, value);
     }
 
     /**
@@ -158,6 +230,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetMessageResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.service/", name = "getMessageResponse")
+    public JAXBElement<GetMessageResponse> createGetMessageResponse(GetMessageResponse value) {
+        return new JAXBElement<GetMessageResponse>(_GetMessageResponse_QNAME, GetMessageResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link AddMessageResponse }{@code >}}
      * 
      */
@@ -176,15 +257,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetMessagesResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.service/", name = "getMessagesResponse")
-    public JAXBElement<GetMessagesResponse> createGetMessagesResponse(GetMessagesResponse value) {
-        return new JAXBElement<GetMessagesResponse>(_GetMessagesResponse_QNAME, GetMessagesResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DeleteMessage }{@code >}}
      * 
      */
@@ -194,12 +266,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link EditMessageResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetMessage }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.service/", name = "editMessageResponse")
-    public JAXBElement<EditMessageResponse> createEditMessageResponse(EditMessageResponse value) {
-        return new JAXBElement<EditMessageResponse>(_EditMessageResponse_QNAME, EditMessageResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.service/", name = "getMessage")
+    public JAXBElement<GetMessage> createGetMessage(GetMessage value) {
+        return new JAXBElement<GetMessage>(_GetMessage_QNAME, GetMessage.class, null, value);
     }
 
 }

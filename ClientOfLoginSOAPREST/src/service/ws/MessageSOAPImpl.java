@@ -30,45 +30,19 @@ public interface MessageSOAPImpl {
      * 
      * @param arg0
      * @return
-     *     returns boolean
+     *     returns service.ws.Message
      * @throws ApplicationException_Exception
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "deleteMessage", targetNamespace = "http://ws.service/", className = "service.ws.DeleteMessage")
-    @ResponseWrapper(localName = "deleteMessageResponse", targetNamespace = "http://ws.service/", className = "service.ws.DeleteMessageResponse")
-    @Action(input = "http://ws.service/MessageSOAPImpl/deleteMessageRequest", output = "http://ws.service/MessageSOAPImpl/deleteMessageResponse", fault = {
-        @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/MessageSOAPImpl/deleteMessage/Fault/ApplicationException")
+    @RequestWrapper(localName = "getMessage", targetNamespace = "http://ws.service/", className = "service.ws.GetMessage")
+    @ResponseWrapper(localName = "getMessageResponse", targetNamespace = "http://ws.service/", className = "service.ws.GetMessageResponse")
+    @Action(input = "http://ws.service/MessageSOAPImpl/getMessageRequest", output = "http://ws.service/MessageSOAPImpl/getMessageResponse", fault = {
+        @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/MessageSOAPImpl/getMessage/Fault/ApplicationException")
     })
-    public boolean deleteMessage(
+    public Message getMessage(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0)
-        throws ApplicationException_Exception
-    ;
-
-    /**
-     * 
-     * @param arg2
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns boolean
-     * @throws ApplicationException_Exception
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "addMessage", targetNamespace = "http://ws.service/", className = "service.ws.AddMessage")
-    @ResponseWrapper(localName = "addMessageResponse", targetNamespace = "http://ws.service/", className = "service.ws.AddMessageResponse")
-    @Action(input = "http://ws.service/MessageSOAPImpl/addMessageRequest", output = "http://ws.service/MessageSOAPImpl/addMessageResponse", fault = {
-        @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/MessageSOAPImpl/addMessage/Fault/ApplicationException")
-    })
-    public boolean addMessage(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1,
-        @WebParam(name = "arg2", targetNamespace = "")
-        String arg2)
         throws ApplicationException_Exception
     ;
 
@@ -115,6 +89,81 @@ public interface MessageSOAPImpl {
         int arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         String arg1)
+        throws ApplicationException_Exception
+    ;
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     * @throws ApplicationException_Exception
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "deleteMessage", targetNamespace = "http://ws.service/", className = "service.ws.DeleteMessage")
+    @ResponseWrapper(localName = "deleteMessageResponse", targetNamespace = "http://ws.service/", className = "service.ws.DeleteMessageResponse")
+    @Action(input = "http://ws.service/MessageSOAPImpl/deleteMessageRequest", output = "http://ws.service/MessageSOAPImpl/deleteMessageResponse", fault = {
+        @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/MessageSOAPImpl/deleteMessage/Fault/ApplicationException")
+    })
+    public boolean deleteMessage(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0)
+        throws ApplicationException_Exception
+    ;
+
+    /**
+     * 
+     * @param arg2
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns boolean
+     * @throws ApplicationException_Exception
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "addMessage", targetNamespace = "http://ws.service/", className = "service.ws.AddMessage")
+    @ResponseWrapper(localName = "addMessageResponse", targetNamespace = "http://ws.service/", className = "service.ws.AddMessageResponse")
+    @Action(input = "http://ws.service/MessageSOAPImpl/addMessageRequest", output = "http://ws.service/MessageSOAPImpl/addMessageResponse", fault = {
+        @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/MessageSOAPImpl/addMessage/Fault/ApplicationException")
+    })
+    public boolean addMessage(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        String arg2)
+        throws ApplicationException_Exception
+    ;
+
+    /**
+     * 
+     * @param arg3
+     * @param arg2
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns boolean
+     * @throws ApplicationException_Exception
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "replyMessage", targetNamespace = "http://ws.service/", className = "service.ws.ReplyMessage")
+    @ResponseWrapper(localName = "replyMessageResponse", targetNamespace = "http://ws.service/", className = "service.ws.ReplyMessageResponse")
+    @Action(input = "http://ws.service/MessageSOAPImpl/replyMessageRequest", output = "http://ws.service/MessageSOAPImpl/replyMessageResponse", fault = {
+        @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/MessageSOAPImpl/replyMessage/Fault/ApplicationException")
+    })
+    public boolean replyMessage(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        String arg2,
+        @WebParam(name = "arg3", targetNamespace = "")
+        int arg3)
         throws ApplicationException_Exception
     ;
 

@@ -54,32 +54,6 @@ public interface UserSOAPImpl {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "addUser", targetNamespace = "http://ws.service/", className = "service.ws.AddUser")
-    @ResponseWrapper(localName = "addUserResponse", targetNamespace = "http://ws.service/", className = "service.ws.AddUserResponse")
-    @Action(input = "http://ws.service/UserSOAPImpl/addUserRequest", output = "http://ws.service/UserSOAPImpl/addUserResponse", fault = {
-        @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/UserSOAPImpl/addUser/Fault/ApplicationException")
-    })
-    public boolean addUser(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1,
-        @WebParam(name = "arg2", targetNamespace = "")
-        boolean arg2)
-        throws ApplicationException_Exception
-    ;
-
-    /**
-     * 
-     * @param arg2
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns boolean
-     * @throws ApplicationException_Exception
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "editUser", targetNamespace = "http://ws.service/", className = "service.ws.EditUser")
     @ResponseWrapper(localName = "editUserResponse", targetNamespace = "http://ws.service/", className = "service.ws.EditUserResponse")
     @Action(input = "http://ws.service/UserSOAPImpl/editUserRequest", output = "http://ws.service/UserSOAPImpl/editUserResponse", fault = {
@@ -132,6 +106,32 @@ public interface UserSOAPImpl {
     public User getUser(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0)
+        throws ApplicationException_Exception
+    ;
+
+    /**
+     * 
+     * @param arg2
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns boolean
+     * @throws ApplicationException_Exception
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "addUser", targetNamespace = "http://ws.service/", className = "service.ws.AddUser")
+    @ResponseWrapper(localName = "addUserResponse", targetNamespace = "http://ws.service/", className = "service.ws.AddUserResponse")
+    @Action(input = "http://ws.service/UserSOAPImpl/addUserRequest", output = "http://ws.service/UserSOAPImpl/addUserResponse", fault = {
+        @FaultAction(className = ApplicationException_Exception.class, value = "http://ws.service/UserSOAPImpl/addUser/Fault/ApplicationException")
+    })
+    public boolean addUser(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        boolean arg2)
         throws ApplicationException_Exception
     ;
 

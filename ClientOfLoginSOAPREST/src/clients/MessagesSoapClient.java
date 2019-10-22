@@ -20,6 +20,15 @@ public class MessagesSoapClient {
 		return getClient().addMessage(mittente, destinatario, messaggio);
 	}
 
+	public static boolean replyMessage(String mittente, String destinatario, String messaggio, int id)
+			throws ApplicationException_Exception {
+		return getClient().replyMessage(mittente, destinatario, messaggio, id);
+	}
+	
+	public static Message getMessage(int id) throws ApplicationException_Exception {
+		return getClient().getMessage(id);
+	}
+
 	public static List<Message> getMessages(String user, String friend) throws ApplicationException_Exception {
 		return getClient().getMessages(user, friend);
 	}

@@ -20,8 +20,10 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *       &lt;sequence>
  *         &lt;element name="data" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="destinatario" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="eliminato" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="mittente" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="risposta" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="testo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -35,8 +37,10 @@ import javax.xml.datatype.XMLGregorianCalendar;
 @XmlType(name = "message", propOrder = {
     "data",
     "destinatario",
+    "eliminato",
     "id",
     "mittente",
+    "risposta",
     "testo"
 })
 public class Message {
@@ -44,8 +48,10 @@ public class Message {
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar data;
     protected String destinatario;
+    protected boolean eliminato;
     protected int id;
     protected String mittente;
+    protected int risposta;
     protected String testo;
 
     /**
@@ -97,6 +103,22 @@ public class Message {
     }
 
     /**
+     * Gets the value of the eliminato property.
+     * 
+     */
+    public boolean isEliminato() {
+        return eliminato;
+    }
+
+    /**
+     * Sets the value of the eliminato property.
+     * 
+     */
+    public void setEliminato(boolean value) {
+        this.eliminato = value;
+    }
+
+    /**
      * Gets the value of the id property.
      * 
      */
@@ -134,6 +156,22 @@ public class Message {
      */
     public void setMittente(String value) {
         this.mittente = value;
+    }
+
+    /**
+     * Gets the value of the risposta property.
+     * 
+     */
+    public int getRisposta() {
+        return risposta;
+    }
+
+    /**
+     * Sets the value of the risposta property.
+     * 
+     */
+    public void setRisposta(int value) {
+        this.risposta = value;
     }
 
     /**

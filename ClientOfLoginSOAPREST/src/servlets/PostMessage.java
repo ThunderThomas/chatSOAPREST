@@ -21,10 +21,17 @@ public class PostMessage extends HttpServlet {
 			String destinatario = request.getParameter("destinatario");
 			String testo = request.getParameter("testo");
 			try {
-				MessagesSoapClient.addMessage((String) request.getSession().getAttribute("user"), destinatario, testo);
+				if (request.getParameter("id") != null) {
+					int id = Integer.parseInt(request.getParameter("id"));
+					MessagesSoapClient.replyMessage((String) request.getSession().getAttribute("user"), destinatario,
+							testo, id);
+				} else
+					MessagesSoapClient.addMessage((String) request.getSession().getAttribute("user"), destinatario,
+							testo);
+				request.getSession().setAttribute("isReplying", false);
 				request.setAttribute("friend", destinatario);
-				request.setAttribute("messageList",
-						MessagesSoapClient.getMessages((String) request.getSession().getAttribute("user"), destinatario));
+				request.setAttribute("messageList", MessagesSoapClient
+						.getMessages((String) request.getSession().getAttribute("user"), destinatario));
 				getServletContext().getRequestDispatcher("/chat.jsp").forward(request, response);
 			} catch (ApplicationException_Exception e) {
 				e.printStackTrace();

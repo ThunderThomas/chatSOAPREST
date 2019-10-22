@@ -35,6 +35,7 @@ public class CheckLogin extends HttpServlet {
 					session.setAttribute("user", username);
 					session.setAttribute("isAdmin", UsersSoapClient.getUser(username).isAdmin());
 					session.setAttribute("userList", UsersSoapClient.getAll());
+					session.setAttribute("isReplying", false);
 					getServletContext().getRequestDispatcher("/chat.jsp").forward(request, response);
 				} else {
 					session.setAttribute("wrongUserOrPassword", true);
